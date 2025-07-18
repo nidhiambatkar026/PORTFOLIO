@@ -53,5 +53,21 @@ let progressphp = setInterval(() => {
 }, phpspeed);
 
 //reactjs progress circular bar
+let reactProgress = document.querySelector(".reactjs"),
+reactValue = document.querySelector(".reactjs-progress");
+
+let reactStartValue = 0, reactEndValue = 75,rjsspeed = 30;
+let progressreact = setInterval(() => {
+    reactStartValue++;
+
+    reactValue.textContent = `${reactStartValue}%`;
+    reactProgress.style.background = `conic-gradient(#3f396d ${
+        reactStartValue * 3.6
+    }deg, #ededed 0deg)`;
+
+    if(reactStartValue == reactEndValue){
+        clearInterval(progressreact);
+    }
+}, rjsspeed);
 
 
